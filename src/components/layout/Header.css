@@ -1,0 +1,88 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e5e7eb; /* gray-200 */
+
+  /* Hide the header by moving it up */
+  transform: translateY(-100%);
+  /* Add a smooth transition for the movement */
+  transition: transform 0.4s ease-in-out;
+}
+
+/* This class is added via JavaScript to show the header */
+.header.is-visible {
+  /* Move the header back into view */
+  transform: translateY(0);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.header-logo {
+  font-size: 1.875rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.logo-highlight {
+  color: #fbbf24;
+}
+
+.header-nav-desktop {
+  display: none; /* Hidden by default */
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.header-icon-btn {
+  color: #111827;
+  transition: color 0.3s ease;
+}
+
+.header-icon-btn:hover {
+  color: #fbbf24;
+}
+
+.search-icon,
+.user-icon {
+  display: none; /* Hidden on small screens */
+}
+
+.mobile-menu-toggle {
+  display: block; /* Visible on small screens */
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .search-icon,
+  .user-icon {
+    display: block;
+  }
+}
+
+/* Desktop and up */
+@media (min-width: 1024px) {
+  .header-nav-desktop {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .mobile-menu-toggle {
+    display: none;
+  }
+}

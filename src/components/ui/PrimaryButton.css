@@ -1,0 +1,16 @@
+.primary-button {
+  background-color: #fbbf24; /* yellow-400 */
+  color: #000000;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 1rem 2rem;
+  font-size: 0.875rem;
+  border-radius: 0.125rem;
+  transition: all 0.3s ease;
+}
+
+.primary-button:hover {
+  background-color: #f59e0b; /* yellow-500 */
+  transform: scale(1.05);
+}

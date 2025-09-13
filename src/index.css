@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  color: #111827; /* Tailwind's text-black is not pure black */
+  background-color: #ffffff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Reusable container class */
+.container {
+  width: 100%;
+  max-width: 1280px; /* Example max-width, adjust as needed */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem; /* 24px */
+  padding-right: 1.5rem; /* 24px */
+}
+
+/* Reusable section padding */
+.section-padding {
+  padding-top: 5rem; /* 80px */
+  padding-bottom: 5rem; /* 80px */
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 7rem; /* 112px */
+    padding-bottom: 7rem; /* 112px */
+  }
+}
+
+/* Add this to the end of the file */

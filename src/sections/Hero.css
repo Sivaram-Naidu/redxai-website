@@ -1,0 +1,72 @@
+/* src/sections/Hero.css */
+
+.hero-section {
+  height: 120vh;
+  min-height: 700px;
+  background-image: url("https://images.unsplash.com/photo-1523381294911-8d3cead13475?q=80&w=1740&auto-format&fit=crop");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: white;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  width: 100%;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin: 0 auto;
+  padding-top: 80px;
+}
+
+.hero-title {
+  /* CHANGED: Reduced for a better fit on small mobile screens */
+  font-size: 2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+.hero-title span {
+  color: #fbbf24;
+}
+
+.hero-subtitle {
+  margin-top: 1rem;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+  color: #d1d5db;
+  font-size: 1.125rem;
+}
+
+.hero-button-container {
+  margin-top: 2.5rem;
+}
+
+/* Responsive styles for larger screens */
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 3.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 4.5rem;
+  }
+}

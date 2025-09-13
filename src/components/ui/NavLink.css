@@ -1,0 +1,12 @@
+.nav-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #1f2937; /* gray-800 */
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #fbbf24; /* yellow-400 */
+}

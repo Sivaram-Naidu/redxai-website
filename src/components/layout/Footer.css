@@ -1,0 +1,66 @@
+/* src/components/layout/Footer.css */
+
+.footer {
+  background-color: #000000;
+  color: #9ca3af; /* gray-400 */
+  border-top: 1px solid #374151; /* gray-800 */
+  padding: 3rem 0;
+}
+
+.footer-grid {
+  display: grid;
+  /* CHANGED: Started with 1 column for the narrowest phones */
+  grid-template-columns: 1fr;
+  /* CHANGED: Increased the gap for better spacing */
+  gap: 2.5rem;
+  font-size: 0.875rem;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-heading {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.footer-link {
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #fbbf24;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-bottom {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid #374151;
+  text-align: center;
+  color: #6b7280; /* gray-500 */
+  font-size: 0.75rem;
+}
+
+/* ADDED: A new breakpoint for slightly larger phones */
+@media (min-width: 480px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
