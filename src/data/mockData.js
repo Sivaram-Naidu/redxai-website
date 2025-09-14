@@ -1,3 +1,4 @@
+import athleticTeeImage from "../assets/images/athletic-tee1.jpg";
 export const tshirtCategories = [
   {
     name: "Graphic Tees", // <-- CHANGED
