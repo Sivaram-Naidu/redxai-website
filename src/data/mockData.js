@@ -1,35 +1,38 @@
+// 1. IMPORT your local image here. This is the crucial step.
 import athleticTeeImage from "../assets/images/athletic-tee1.jpg";
+
 export const tshirtCategories = [
   {
-    name: "Graphic Tees", // <-- CHANGED
+    name: "Graphic Tees",
     slug: "oversized-graphic-tees",
     subtitle: "Bold & Expressive",
     image: "https://m.media-amazon.com/images/I/71stMG2PuZL._UY1100_.jpg",
   },
   {
-    name: "The Essentials", // <-- CHANGED
+    name: "The Essentials",
     slug: "boxy-solid-neutrals",
-    subtitle: "Minimalist Staples", // <-- Updated subtitle
+    subtitle: "Minimalist Staples",
     image:
       "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=800&auto=format&fit=crop",
   },
   {
-    name: "Long Sleeves", // <-- CHANGED
+    name: "Long Sleeves",
     slug: "retro-striped-long-sleeves",
     subtitle: "Timeless & Versatile",
     image:
       "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQaeYAf_4EVWHZt04L6B563SpwCmY7IYN6DPZsYak2NJF7ullwtCgjwIzJmJ8qchrSm_rkyAgtHX4QirZOa02Qgc886aMgIl7h5g-8HeO0OAAYpRmyWTPtB",
   },
   {
-    name: "Athletic Tees", // <-- CHANGED
+    name: "Athletic Tees",
     slug: "sports-jersey-inspired",
-    subtitle: "Street & Sport Style", // <-- Updated subtitle
-    image: "./src/assets/images/athletic-tee1.jpg",
+    subtitle: "Street & Sport Style",
+    // 2. Use the imported variable for the image path
+    image: athleticTeeImage,
   },
   {
-    name: "Limited Edition", // <-- CHANGED
+    name: "Limited Edition",
     slug: "imported-collection",
-    subtitle: "Exclusive Drops", // <-- Updated subtitle
+    subtitle: "Exclusive Drops",
     image:
       "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=800&auto=format&fit=crop",
   },
@@ -69,21 +72,21 @@ export const products = [
     price: "$55.00",
     description:
       "A nod to timeless style. This retro-inspired long-sleeve features classic stripes and a comfortable, standard fit. Perfect for layering or wearing on its own.",
+    // Your updated image URL is included here
     images: ["https://m.media-amazon.com/images/I/61tLU9bVU8L._SX679_.jpg"],
     sizes: ["S", "M", "L", "XL"],
     categorySlug: "retro-striped-long-sleeves",
   },
-  // NEW T-SHIRT ADDED BELOW
+  // Your new T-shirt is included below
   {
-    id: "rdx-ath-01", // <-- Unique ID
-    name: "Performance V-Neck", // <-- New name
-    price: "$40.00", // <-- New price
+    id: "rdx-ath-01",
+    name: "Performance V-Neck",
+    price: "$40.00",
     description:
-      "Engineered for performance and style. This moisture-wicking V-neck keeps you cool and comfortable, whether you're at the gym or on the go.", // <-- New description
-    images: [
-      "./src/assets/images/athletic-tee1.jpg", // <-- New image
-    ], // <-- New images
+      "Engineered for performance and style. This moisture-wicking V-neck keeps you cool and comfortable, whether you're at the gym or on the go.",
+    // 3. Use the imported variable for the image path here as well
+    images: [athleticTeeImage],
     sizes: ["S", "M", "L", "XL"],
-    categorySlug: "sports-jersey-inspired", // <-- Matches the "Athletic Tees" slug
+    categorySlug: "sports-jersey-inspired",
   },
 ];
