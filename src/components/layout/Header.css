@@ -8,15 +8,11 @@
   backdrop-filter: blur(10px);
   border-bottom: 1px solid #e5e7eb; /* gray-200 */
 
-  /* Hide the header by moving it up */
   transform: translateY(-100%);
-  /* Add a smooth transition for the movement */
   transition: transform 0.4s ease-in-out;
 }
 
-/* This class is added via JavaScript to show the header */
 .header.is-visible {
-  /* Move the header back into view */
   transform: translateY(0);
 }
 
@@ -81,6 +77,8 @@
     display: flex;
     align-items: center;
     gap: 2rem;
+    /* ADDED: Creates space between the logo and nav links */
+    margin-left: 2rem;
   }
   .mobile-menu-toggle {
     display: none;

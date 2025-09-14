@@ -1,15 +1,21 @@
 import React from "react";
 import CategoryCard from "../components/cards/CategoryCard";
-import { categoryData } from "../data/mockData";
 import "./Categories.css";
 
-const Categories = () => {
+const Categories = ({ categories }) => {
   return (
     <section className="categories-section section-padding">
       <div className="container">
         <div className="categories-grid">
-          {categoryData.map((category) => (
-            <CategoryCard key={category.title} {...category} />
+          {categories.map((category) => (
+            <CategoryCard
+              key={category.slug}
+              title={category.name}
+              subtitle={category.subtitle}
+              image={category.image}
+              // ADDED: Pass the correct URL to the card's 'to' prop
+              to={`/category/${category.slug}`}
+            />
           ))}
         </div>
       </div>

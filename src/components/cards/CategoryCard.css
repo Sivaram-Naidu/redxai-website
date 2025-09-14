@@ -1,7 +1,11 @@
+/* src/components/cards/CategoryCard.css */
+
 .category-card {
   position: relative;
   overflow: hidden;
   border-radius: 0.125rem;
+  /* ADDED: Forces a consistent 3:4 shape for all cards */
+  aspect-ratio: 3 / 4;
 }
 
 .category-card-image {
@@ -54,9 +58,4 @@
 
 .category-card:hover .category-card-line {
   transform: scaleX(1);
-}
-
-.category-card-link {
-  position: absolute;
-  inset: 0;
 }

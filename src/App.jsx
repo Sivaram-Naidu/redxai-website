@@ -1,51 +1,59 @@
 import React, { useState, useEffect } from "react";
-// 1. Import Outlet from react-router-dom. This is where the pages will be rendered.
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 
 // Layout Components
 import Header from "./components/layout/Header";
 import MobileMenu from "./components/layout/MobileMenu";
 import Footer from "./components/layout/Footer";
 
+// 1. Import our new ScrollToTop component
+import ScrollToTop from "./components/utils/ScrollToTop";
+
+// Import our data
+import { tshirtCategories } from "./data/mockData";
+
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isHeaderVisible, setIsHeaderVisible] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
-    // This effect makes the header appear on scroll. It's good to keep.
     const handleScroll = () => {
-      // We'll make it appear sooner for a better feel on all pages
       if (window.scrollY > 50) {
         setIsHeaderVisible(true);
       } else {
         setIsHeaderVisible(false);
       }
     };
-    window.addEventListener("scroll", handleScroll);
+
+    if (location.pathname === "/") {
+      handleScroll();
+      window.addEventListener("scroll", handleScroll);
+    } else {
+      setIsHeaderVisible(true);
+    }
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [location.pathname]);
 
   return (
     <>
+      {/* 2. Add the component here. It will automatically handle scrolling. */}
+      <ScrollToTop />
+
       <Header
+        categories={tshirtCategories}
         onMenuOpen={() => setIsMenuOpen(true)}
         isVisible={isHeaderVisible}
       />
       <MobileMenu
-        navItems={[
-          { name: "Men", to: "/category/men" },
-          { name: "Women", to: "/category/women" },
-          { name: "Kids", to: "/category/kids" },
-          { name: "New Arrivals", to: "/category/new-arrivals" },
-          { name: "Sale", to: "/sale" },
-        ]}
+        categories={tshirtCategories}
         isMenuOpen={isMenuOpen}
         onMenuClose={() => setIsMenuOpen(false)}
       />
 
-      {/* 2. The <Outlet> component renders the current page (HomePage, CategoryPage, etc.) */}
       <Outlet />
 
       <Footer />

@@ -3,22 +3,21 @@ import NavLink from "../ui/NavLink";
 import { SearchIcon, UserIcon, ShoppingBagIcon, MenuIcon } from "../icons";
 import "./Header.css";
 
-const Header = ({ onMenuOpen, isVisible }) => {
+const Header = ({ categories, onMenuOpen, isVisible }) => {
   return (
     <header className={`header ${isVisible ? "is-visible" : ""}`}>
       <div className="container header-container">
-        {/* This NavLink now uses react-router-dom's Link */}
+        {/* THIS is the link that makes the logo clickable */}
         <NavLink to="/" className="header-logo">
           Redx<span className="logo-highlight">ai</span>
         </NavLink>
 
         <nav className="header-nav-desktop">
-          {/* UPDATED: Links now point to the correct routes */}
-          <NavLink to="/category/men">Men</NavLink>
-          <NavLink to="/category/women">Women</NavLink>
-          <NavLink to="/category/kids">Kids</NavLink>
-          <NavLink to="/category/new-arrivals">New Arrivals</NavLink>
-          <NavLink to="/sale">Sale</NavLink>
+          {categories.map((category) => (
+            <NavLink key={category.slug} to={`/category/${category.slug}`}>
+              {category.name}
+            </NavLink>
+          ))}
         </nav>
 
         <div className="header-icons">

@@ -9,25 +9,30 @@ import "./index.css";
 import HomePage from "./pages/HomePage.jsx";
 import CategoryPage from "./pages/CategoryPage.jsx";
 import SalePage from "./pages/SalePage.jsx";
+import ProductDetailPage from "./pages/ProductDetailPage.jsx"; // 1. Import the new page
 
 // Define the website's routes
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />, // The App component is the main layout
+    element: <App />,
     children: [
       {
-        path: "/", // When the URL is '/', show the HomePage
+        path: "/",
         element: <HomePage />,
       },
       {
-        // When the URL is '/category/something', show the CategoryPage
-        // The ':categoryName' part is a dynamic parameter
         path: "category/:categoryName",
         element: <CategoryPage />,
       },
       {
-        path: "sale", // When the URL is '/sale', show the SalePage
+        // 2. Add the new route for a single product
+        // The ':productId' will be the unique ID like 'rdx-ogt-01'
+        path: "product/:productId",
+        element: <ProductDetailPage />,
+      },
+      {
+        path: "sale",
         element: <SalePage />,
       },
     ],

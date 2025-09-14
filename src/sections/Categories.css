@@ -8,7 +8,15 @@
   gap: 1.5rem;
 }
 
-@media (min-width: 768px) {
+/* On tablets, show a 2-column grid */
+@media (min-width: 640px) {
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* On desktops, show a 3-column grid, the items will wrap nicely */
+@media (min-width: 1024px) {
   .categories-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;

@@ -1,10 +1,10 @@
 import React from "react";
-// 1. Import Link from react-router-dom
 import { Link } from "react-router-dom";
 import { XIcon } from "../icons";
 import "./MobileMenu.css";
 
-const MobileMenu = ({ navItems, isMenuOpen, onMenuClose }) => {
+// Receive 'categories' prop
+const MobileMenu = ({ categories, isMenuOpen, onMenuClose }) => {
   return (
     <div className={`mobile-menu ${isMenuOpen ? "is-open" : ""}`}>
       <div className="mobile-menu-header">
@@ -13,15 +13,15 @@ const MobileMenu = ({ navItems, isMenuOpen, onMenuClose }) => {
         </button>
       </div>
       <nav className="mobile-menu-nav">
-        {navItems.map((item) => (
-          // 2. Use the <Link> component and the object properties
+        {/* Map over the new categories */}
+        {categories.map((category) => (
           <Link
-            key={item.name}
-            to={item.to}
+            key={category.slug}
+            to={`/category/${category.slug}`}
             className="mobile-menu-link"
             onClick={onMenuClose}
           >
-            {item.name} {/* <-- Display item.name, not the whole item object */}
+            {category.name}
           </Link>
         ))}
       </nav>

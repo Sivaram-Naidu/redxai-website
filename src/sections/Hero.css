@@ -1,9 +1,10 @@
 /* src/sections/Hero.css */
 
 .hero-section {
-  height: 120vh;
-  min-height: 700px;
-  background-image: url("https://images.unsplash.com/photo-1523381294911-8d3cead13475?q=80&w=1740&auto-format&fit=crop");
+  /* --- Mobile Styles (Default) --- */
+  height: 90vh; /* A slightly shorter height for a better mobile experience */
+  min-height: 650px; /* A fallback for very short screens */
+  background-image: url("https://images.unsplash.com/photo-1523381294911-8d3cead13475?q=80&w=1740&auto=format&fit=crop");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -33,7 +34,6 @@
 }
 
 .hero-title {
-  /* CHANGED: Reduced for a better fit on small mobile screens */
   font-size: 2rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -58,15 +58,21 @@
   margin-top: 2.5rem;
 }
 
-/* Responsive styles for larger screens */
-@media (min-width: 768px) {
+/* --- PC & Tablet Styles (for screens 1024px and wider) --- */
+@media (min-width: 1024px) {
+  .hero-section {
+    height: 100vh; /* Back to full screen height for an immersive feel on desktop */
+    min-height: 700px;
+  }
+
   .hero-title {
-    font-size: 3.75rem;
+    font-size: 4.5rem;
   }
 }
 
-@media (min-width: 1024px) {
+/* A small adjustment for medium-sized tablets */
+@media (min-width: 768px) {
   .hero-title {
-    font-size: 4.5rem;
+    font-size: 3.75rem;
   }
 }
